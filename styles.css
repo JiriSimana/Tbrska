@@ -663,6 +663,20 @@ body {
 @media (max-width: 900px) {
   .studio-meta { position: static; }
 }
+.studio-photo {
+  margin: 0 0 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--cream-soft);
+}
+.studio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.15) contrast(1.02);
+}
 .studio-location {
   font-family: var(--f-display);
   font-style: italic;
