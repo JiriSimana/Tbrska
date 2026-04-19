@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>tbrska — portréty a abstrakce malované ručně</title>
+<meta name="description" content="Umělecké portréty a abstraktní malby ze Slovenska a Česka. Originály na zakázku — pro sebe, pro lásku, pro vzpomínku.">
+<meta name="author" content="Dominika Táborská (tbrska)">
+<meta name="theme-color" content="#301728">
+<link rel="canonical" href="https://tbrska.vercel.app/">
+
+<!-- Favicon / touch icons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portréty a abstrakce od tbrska">
+<meta property="og:description" content="Malby na zakázku — portréty i abstraktní kompozice. Objednávky přes Instagram @taborskaarts nebo web.">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:url" content="https://tbrska.vercel.app/">
+<meta property="og:image" content="https://tbrska.vercel.app/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="tbrska — portréty a abstrakce malované ručně">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portréty a abstrakce od tbrska">
+<meta name="twitter:description" content="Malby na zakázku — portréty i abstraktní kompozice.">
+<meta name="twitter:image" content="https://tbrska.vercel.app/og-image.svg">
+
+<!-- Fonts: Fraunces (display serif) + Work Sans (body) - distinctive combo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- FLOATING NAV PILL -->
+<nav class="nav" aria-label="Hlavní navigace">
+  <a href="#home" class="nav-brand">tbrska</a>
+  <ul class="nav-links">
+    <li><a href="#work" data-cs="Portfolio" data-sk="Portfólio">Portfolio</a></li>
+    <li><a href="#studio" data-cs="Studio" data-sk="Ateliér">Studio</a></li>
+    <li><a href="#services" data-cs="Služby" data-sk="Služby">Služby</a></li>
+    <li><a href="#contact" data-cs="Kontakt" data-sk="Kontakt">Kontakt</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" data-lang="cs" aria-label="Čeština">CZ</button>
+    <button class="lang-btn" data-lang="sk" aria-label="Slovenčina">SK</button>
+    <button class="lang-btn" data-lang="hu" aria-label="Magyarul" disabled title="Coming soon">HU</button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-brush"></div>
+  </div>
+
+  <div class="hero-meta">
+    <span class="meta-line"></span>
+    <span class="meta-text">Studio · CZ / SK · 2026</span>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="hero-word" style="--d:0">Plátno,</span>
+      <span class="hero-word" style="--d:1">štětec,</span>
+      <span class="hero-word hero-word--accent" style="--d:2">ty.</span>
+    </h1>
+    <p class="hero-sub">
+      Originální malby na zakázku.<br>
+      Portréty, abstraktní kompozice, dárky se smyslem.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Chci svůj obraz <span class="btn-arrow">→</span></a>
+      <a href="#work" class="btn btn-ghost">Prohlédnout portfolio</a>
+    </div>
+  </div>
+
+  <a href="#work" class="hero-scroll" aria-label="Posunout dolů">
+    <span class="scroll-label">Scroll</span>
+    <span class="scroll-line"></span>
+  </a>
+</header>
+
+<!-- ============ INTRO STRIP ============ -->
+<section class="strip" aria-label="O tvorbě">
+  <div class="strip-inner">
+    <p class="strip-text">
+      <em>tbrska</em> — Dominika Táborská. Výtvarnice, která maluje to, co se do fotky nevejde.
+      Olej, akryl, uhel. Plátna, která visí v bytech v Česku, na Slovensku i dál.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO / WORK ============ -->
+<section class="section work" id="work">
+  <div class="section-header">
+    <div class="section-label">
+      <span class="label-num">01</span>
+      <span class="label-text">Portfolio</span>
+    </div>
+    <h2 class="section-title">
+      Pár věcí, <em>co už někde visí</em>
+    </h2>
+    <p class="section-lead">
+      Malý výběr z realizovaných zakázek za poslední roky. Některé obrazy si majitelé nechávají pro sebe — ale tohle prošlo.
+    </p>
+  </div>
+
+  <div class="work-filter" role="group" aria-label="Kategorie prací">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">
+      <span class="filter-label">Vše</span>
+      <span class="filter-count" id="count-all">—</span>
+    </button>
+    <button class="filter-btn" data-filter="portraits" aria-pressed="false">
+      <span class="filter-label">Portréty</span>
+      <span class="filter-count" id="count-portraits">—</span>
+    </button>
+    <button class="filter-btn" data-filter="abstract" aria-pressed="false">
+      <span class="filter-label">Abstraktní portréty</span>
+      <span class="filter-count" id="count-abstract">—</span>
+    </button>
+    <button class="filter-btn" data-filter="paintings" aria-pressed="false">
+      <span class="filter-label">Malby</span>
+      <span class="filter-count" id="count-paintings">—</span>
+    </button>
+  </div>
+
+  <div class="work-desc">
+    <p class="work-desc-text" data-cat="all">Všechny kategorie dohromady. Klikni na některý z filtrů pro zaměření.</p>
+    <p class="work-desc-text" data-cat="portraits" hidden>Tváře, které zůstaly.</p>
+    <p class="work-desc-text" data-cat="abstract" hidden>Když portrét není portrét.</p>
+    <p class="work-desc-text" data-cat="paintings" hidden>Ostatní malířské práce.</p>
+  </div>
+
+  <div class="work-grid" id="workGrid">
+    <!-- Placeholder tiles — Dominika doplní skutečné obrázky.
+         Pro vlastní fotku: nahraď src v <img> za cestu k tvé fotce (např. "images/moje-foto.jpg")
+         a uprav alt text. Doporučené rozměry v README. -->
+    <!-- Portraits -->
+    <article class="work-tile" data-cat="portraits" style="--delay:0">
+      <div class="tile-media">
+        <img src="images/portret-01.svg" alt="Portrét — ukázka č. 01" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Portrét</span>
+          <span class="tile-title">Portrét č. 01</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile wide" data-cat="portraits" style="--delay:1">
+      <div class="tile-media">
+        <img src="images/portret-02.svg" alt="Portrét — ukázka č. 02" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Portrét</span>
+          <span class="tile-title">Portrét č. 02</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile" data-cat="portraits" style="--delay:2">
+      <div class="tile-media">
+        <img src="images/portret-03.svg" alt="Portrét — ukázka č. 03" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Portrét</span>
+          <span class="tile-title">Portrét č. 03</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Abstract -->
+    <article class="work-tile tall" data-cat="abstract" style="--delay:3">
+      <div class="tile-media">
+        <img src="images/kompozice-01.svg" alt="Abstraktní kompozice I" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Abstraktní portrét</span>
+          <span class="tile-title">Kompozice I</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile" data-cat="abstract" style="--delay:4">
+      <div class="tile-media">
+        <img src="images/kompozice-02.svg" alt="Abstraktní kompozice II" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Abstraktní portrét</span>
+          <span class="tile-title">Kompozice II</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile" data-cat="abstract" style="--delay:5">
+      <div class="tile-media">
+        <img src="images/kompozice-03.svg" alt="Abstraktní kompozice III" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Abstraktní portrét</span>
+          <span class="tile-title">Kompozice III</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Paintings -->
+    <article class="work-tile" data-cat="paintings" style="--delay:6">
+      <div class="tile-media">
+        <img src="images/zatisi-01.svg" alt="Zátiší — ukázka" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Malba</span>
+          <span class="tile-title">Zátiší</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile wide" data-cat="paintings" style="--delay:7">
+      <div class="tile-media">
+        <img src="images/volna-01.svg" alt="Volná malířská práce — ukázka" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Malba</span>
+          <span class="tile-title">Volná práce</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-tile" data-cat="paintings" style="--delay:8">
+      <div class="tile-media">
+        <img src="images/krajina-01.svg" alt="Krajina — ukázka" loading="lazy" width="1200" height="1200">
+        <div class="tile-overlay">
+          <span class="tile-cat">Malba</span>
+          <span class="tile-title">Krajina</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="work-empty" hidden>
+    <p>Zatím tady nic není — ale chystá se.</p>
+  </div>
+
+  <div class="work-more">
+    <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener" class="btn btn-ghost">
+      Další práce na Instagramu <span class="btn-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ STUDIO / ABOUT ============ -->
+<section class="section studio" id="studio">
+  <div class="studio-grid">
+    <div class="studio-meta">
+      <div class="section-label">
+        <span class="label-num">02</span>
+        <span class="label-text">Studio</span>
+      </div>
+      <p class="studio-location">Česko · Slovensko</p>
+      <p class="studio-working">Pracuji v olejích, akrylu, uhlu.<br>Pro sebe nejradši v tichu.</p>
+      <ul class="studio-facts">
+        <li><span>CZ · SK · HU</span><small>Dorozumím se</small></li>
+        <li><span>Olej · Akryl · Uhel</span><small>Materiály</small></li>
+        <li><span>3–6 týdnů</span><small>Obvyklá lhůta</small></li>
+        <li><span>Na zakázku</span><small>Vždy originál</small></li>
+      </ul>
+    </div>
+
+    <div class="studio-copy">
+      <h2 class="section-title">
+        <em>Štětec</em><br>místo slov.
+      </h2>
+      <div class="studio-text">
+        <p class="studio-lead">
+          Vyrostla jsem mezi dvěma jazyky a dvěma zeměmi — a možná proto jsem nakonec našla třetí řeč: barvu.
+        </p>
+        <p>
+          K malování jsem se dostala přirozeně, skoro neviditelně. Nejdřív to byly skicy do sešitů, pak portréty blízkých, pak lidé, které jsem nikdy neviděla, ale cítila. Dneska tvořím obrazy, které visí v bytech v Česku, na Slovensku i dál — a pokaždé je to trochu jako dát kus sebe někomu jinému.
+        </p>
+        <p>
+          Maluji portréty, které se dívají zpátky. Abstrakce, které nevysvětlují, ale cítí. A obrazy na míru — pro dárek, pro vzpomínku, pro zeď, která volá.
+        </p>
+        <p class="studio-closer">
+          Je to pomalá práce.<br>
+          A to se mi na tom líbí nejvíc.
+        </p>
+        <p class="studio-signature">— Dominika</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="section-header">
+    <div class="section-label">
+      <span class="label-num">03</span>
+      <span class="label-text">Služby</span>
+    </div>
+    <h2 class="section-title">
+      Co se děje <em>mezi mnou</em><br>a plátnem
+    </h2>
+    <p class="section-lead">
+      Tři typy zakázek. Jeden společný jmenovatel: originál. Cenu počítám vždy na míru — závisí na velikosti, technice a náročnosti.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <article class="service">
+      <div class="service-mark" data-service="portrait">
+        <span class="service-num">I.</span>
+        <span class="service-dot" aria-hidden="true"></span>
+      </div>
+      <h3 class="service-name">Portrét</h3>
+      <p class="service-short">
+        Realistický i stylizovaný portrét z fotografie. Pro milovanou osobu, vzpomínku nebo dárek, co zůstane.
+      </p>
+      <div class="service-detail">
+        <p>
+          Portréty maluji z fotografií, které mi pošleš. Nejvíc mi pomáhá, když je tam světlo z okna a nepózovaný moment — ale žádné pravidlo neplatí. Pracuji olejem nebo akrylem, podle toho, jakou náladu obraz potřebuje.
+        </p>
+        <p>
+          Může to být portrét dítěte, partnera, babičky, která už tady není, nebo někoho, koho jsi chtěla namalovat, ale nikdy ses k tomu nedostala. Všechno je v pořádku.
+        </p>
+        <p class="service-meta">Dodání: <strong>3–6 týdnů</strong> od potvrzení</p>
+      </div>
+      <a href="#contact" class="service-cta">Napsat o portrétu <span class="btn-arrow">→</span></a>
+    </article>
+
+    <article class="service">
+      <div class="service-mark" data-service="abstract">
+        <span class="service-num">II.</span>
+        <span class="service-dot" aria-hidden="true"></span>
+      </div>
+      <h3 class="service-name">Abstraktní portréty</h3>
+      <p class="service-short">
+        Abstraktní kompozice na zakázku. Barevná paleta a rozměry dle zadání a prostoru.
+      </p>
+      <div class="service-detail">
+        <p>
+          Abstrakce jsou moje nejsvobodnější zóna. Pracuji intuicí, vrstvami a barvou, která sama říká, kam chce jít.
+        </p>
+        <p>
+          Obvykle je to proces: povíš mi, co má obraz dělat s místností — uklidnit, probudit, vyprávět? Jakou máš kolem sebe paletu? Jakou hudbu poslouchaš, když tam jsi? A z toho se rodí plátno.
+        </p>
+        <p>
+          Žádné dva obrazy nejsou stejné. Často ani já neumím dopředu říct, jak to dopadne. Právě to je na tom to nejlepší.
+        </p>
+        <p class="service-meta">Dodání: <strong>2–5 týdnů</strong></p>
+      </div>
+      <a href="#contact" class="service-cta">Chci ji <span class="btn-arrow">→</span></a>
+    </article>
+
+    <article class="service">
+      <div class="service-mark" data-service="gift">
+        <span class="service-num">III.</span>
+        <span class="service-dot" aria-hidden="true"></span>
+      </div>
+      <h3 class="service-name">Obraz na míru jako dárek</h3>
+      <p class="service-short">
+        Protože parfém už měla.
+      </p>
+      <div class="service-detail">
+        <p>
+          Stačí říct: pro koho, proč a do kdy. Zbytek je na mně. Včetně toho, aby o tom nikdo jiný nevěděl.
+        </p>
+        <p>
+          Pomůžu ti vybrat formát, vymyslet námět, připravit všechno tak, aby to bylo překvapení. Diskrétně, bez spoilerů. Funguje to na narozeniny, výročí, svatby, ale i prostě tak.
+        </p>
+        <p class="service-meta">Ideálně: <strong>4–8 týdnů předem</strong></p>
+      </div>
+      <a href="#contact" class="service-cta">Chci překvapit <span class="btn-arrow">→</span></a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROCESS STRIP ============ -->
+<section class="process" aria-label="Jak to u mě funguje">
+  <div class="process-header">
+    <span class="process-label">Proces</span>
+    <h3 class="process-title">Každá zakázka je <em>malý rozhovor.</em></h3>
+  </div>
+  <ol class="process-steps">
+    <li class="process-step">
+      <span class="step-num">01</span>
+      <span class="step-title">Napsání</span>
+      <span class="step-text">Piš mi klidně i když ještě nevíš, co přesně chceš — od toho jsem tady.</span>
+    </li>
+    <li class="process-step">
+      <span class="step-num">02</span>
+      <span class="step-title">Návrh</span>
+      <span class="step-text">Probereme náladu, velikost, techniku. Řeknu cenu a termín.</span>
+    </li>
+    <li class="process-step">
+      <span class="step-num">03</span>
+      <span class="step-title">Malba</span>
+      <span class="step-text">Po záloze začínám. Posílám průběžné fotky ze studia.</span>
+    </li>
+    <li class="process-step">
+      <span class="step-num">04</span>
+      <span class="step-title">Předání</span>
+      <span class="step-text">Doručení osobně nebo poštou. Klidně i zabalené jako překvapení.</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section testimonials" id="testimonials">
+  <div class="section-header section-header--centered">
+    <div class="section-label section-label--centered">
+      <span class="label-num">04</span>
+      <span class="label-text">Reference</span>
+    </div>
+    <h2 class="section-title">
+      Co říkají ti, kterým <em>obraz už visí</em>
+    </h2>
+    <p class="section-lead">
+      Pár slov od lidí, kteří si nechali namalovat něco svého.
+    </p>
+  </div>
+
+  <div class="testi-empty">
+    <p class="testi-empty-text">
+      Pár referencí dorazí brzy. Mezitím si klidně mrkni na Instagram.
+    </p>
+    <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener" class="btn btn-ghost">
+      @taborskaarts <span class="btn-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-copy">
+      <div class="section-label">
+        <span class="label-num">05</span>
+        <span class="label-text">Kontakt</span>
+      </div>
+      <h2 class="section-title">
+        Napiš mi.<br><em>Jedna zpráva</em> a máme to.
+      </h2>
+      <p class="contact-lead">
+        Formulář slouží pro nezávaznou poptávku na zakázkový obraz. Odpovídám obvykle do 2 pracovních dnů.
+      </p>
+      <ul class="contact-direct">
+        <li>
+          <span class="contact-meta">E-mail</span>
+          <a href="mailto:domi.taborska@icloud.com">domi.taborska@icloud.com</a>
+        </li>
+        <li>
+          <!-- Dominiko, dopln tu své číslo (stejně do href tel: a do textu) -->
+          <span class="contact-meta">Telefon</span>
+          <a href="tel:+421000000000">+421 XXX XXX XXX</a>
+        </li>
+        <li>
+          <span class="contact-meta">Instagram</span>
+          <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener">@taborskaarts ↗</a>
+        </li>
+        <li>
+          <span class="contact-meta">Lokace</span>
+          <span>Česko · Slovensko</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-field">
+        <label for="f-name">Jméno</label>
+        <input type="text" id="f-name" name="name" placeholder="Jméno" required autocomplete="name">
+      </div>
+      <div class="form-field">
+        <label for="f-email">E-mail</label>
+        <input type="email" id="f-email" name="email" placeholder="E-mail" required autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label for="f-message">Zpráva</label>
+        <textarea id="f-message" name="message" placeholder="Popiš, co máš na mysli — námět, velikost, termín." required rows="6"></textarea>
+      </div>
+      <div class="form-field form-gdpr">
+        <label class="gdpr-label">
+          <input type="checkbox" id="f-gdpr" name="gdpr" required>
+          <span>Souhlasím se zpracováním osobních údajů pro účely odpovědi na poptávku.</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">
+        Odeslat <span class="btn-arrow">→</span>
+      </button>
+      <div class="form-feedback" id="formFeedback" hidden></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-name">tbrska</span>
+      <span class="footer-slogan">art · CZ / SK / HU</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#services">Služby</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <ul class="footer-social">
+      <li><a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener">Instagram ↗</a></li>
+      <li><a href="mailto:domi.taborska@icloud.com">E-mail ↗</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© tbrska 2026 — bez kopií, bez printů, bez výmluv</p>
+    <button class="footer-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Zpět nahoru">
+      ↑ Nahoru
+    </button>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <p class="cookie-text">
+    Používáme cookies pro analýzu návštěvnosti. Podrobnosti v Zásadách ochrany.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn btn-ghost btn-small" onclick="handleCookie(false)">Odmítnout</button>
+    <button class="btn btn-primary btn-small" onclick="handleCookie(true)">Přijmout</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

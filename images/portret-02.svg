@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ukázka portrétu — dva propojené obrysy v modré">
+  <defs>
+    <linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F9F5F0"/>
+      <stop offset="1" stop-color="#B7D4EA" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="p2blur"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="p2grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.56  0 0 0 0 0.72  0 0 0 0 0.88  0 0 0 0.18 0"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#p2bg)"/>
+  <!-- back head -->
+  <ellipse cx="760" cy="520" rx="220" ry="290" fill="#8FB8D4" opacity="0.55" filter="url(#p2blur)"/>
+  <!-- front head -->
+  <path d="M 380 400 C 470 370 580 400 620 490 C 650 560 640 640 610 700 C 580 760 580 820 610 860 L 625 940 C 635 1010 580 1050 510 1050 L 400 1050 C 330 1050 285 1000 280 930 L 285 830 C 290 770 270 710 240 670 C 200 615 200 540 225 480 C 255 415 325 415 380 400 Z" fill="#301728" opacity="0.82" filter="url(#p2grain)"/>
+  <!-- brush accent -->
+  <path d="M 60 180 Q 260 140 470 190" stroke="#301728" stroke-width="2.5" fill="none" opacity="0.35"/>
+  <path d="M 80 230 Q 280 200 490 250" stroke="#8FB8D4" stroke-width="1.5" fill="none" opacity="0.45"/>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="tbrska">
+  <rect width="64" height="64" rx="14" fill="#301728"/>
+  <!-- monogram t b -->
+  <g fill="#F4EFEA" font-family="Georgia, 'Times New Roman', serif">
+    <text x="14" y="44" font-size="36" font-style="italic" font-weight="400">t</text>
+    <text x="30" y="44" font-size="36" font-style="italic" font-weight="400">b</text>
+  </g>
+  <!-- accent dot -->
+  <circle cx="54" cy="14" r="3" fill="#B7D4EA"/>
+</svg>

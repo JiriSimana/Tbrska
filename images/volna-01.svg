@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Volná malířská práce — panoramatické pásy barev">
+  <defs>
+    <linearGradient id="v1bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F9F5F0"/>
+      <stop offset="0.35" stop-color="#EDE6DD"/>
+      <stop offset="0.65" stop-color="#B7D4EA" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#301728" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="v1soft"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="v1grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="31"/>
+      <feColorMatrix values="0 0 0 0 0.19  0 0 0 0 0.09  0 0 0 0 0.16  0 0 0 0.2 0"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#v1bg)"/>
+  <!-- horizontal brush bands -->
+  <rect x="0" y="300" width="1200" height="120" fill="#F4EFEA" opacity="0.6" filter="url(#v1soft)"/>
+  <rect x="0" y="640" width="1200" height="160" fill="#8FB8D4" opacity="0.45" filter="url(#v1soft)"/>
+  <rect x="0" y="900" width="1200" height="100" fill="#1E0E18" opacity="0.55" filter="url(#v1soft)"/>
+  <!-- diagonal accent -->
+  <path d="M -50 550 Q 300 520 600 540 T 1250 560" stroke="#4A2538" stroke-width="5" fill="none" opacity="0.4"/>
+  <path d="M -50 590 Q 300 560 600 580 T 1250 600" stroke="#4A2538" stroke-width="2" fill="none" opacity="0.3"/>
+  <!-- accents -->
+  <circle cx="220" cy="380" r="22" fill="#301728" opacity="0.6"/>
+  <circle cx="940" cy="720" r="48" fill="#F9F5F0" opacity="0.85"/>
+  <rect width="1200" height="1200" fill="#F4EFEA" filter="url(#v1grain)" opacity="0"/>
+</svg>

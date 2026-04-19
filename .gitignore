@@ -1,0 +1,82 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Thumbnails
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+.project
+.settings/
+
+# Node / tooling (pro budoucnost, kdyby se přidal)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnp.*
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Build artefakty
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Vercel
+.vercel
+
+# Claude Code session / nástroje
+.claude/
+
+# Logs
+logs/
+*.log
+
+# OS tmp
+tmp/
+temp/
+
+# Obrazy a archivy Dominiky před optimalizací (pokud ukládá RAW / Photoshop)
+*.psd
+*.ai
+*.sketch
+*.xcf
+*.tif
+*.tiff
+*.raw
+*.cr2
+*.nef
+
+# Drafty / skici (pokud Dominika přidá do složky drafts/)
+drafts/
+_tmp/
