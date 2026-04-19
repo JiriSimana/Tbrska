@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -119,33 +119,40 @@
     </p>
   </div>
 
-  <div class="work-filter" role="group" aria-label="Kategorie prací">
-    <button class="filter-btn active" data-filter="all" aria-pressed="true">
-      <span class="filter-label">Vše</span>
-      <span class="filter-count" id="count-all">—</span>
+  <div class="work-categories" id="workCategories">
+    <button class="cat-card" data-cat="portraits" type="button" aria-label="Otevřít galerii Portréty">
+      <div class="cat-card-media">
+        <img src="images/IMG_7136.JPG" alt="Ukázka portrétu — Lewis Hamilton na červeném pozadí Ferrari" loading="lazy">
+      </div>
+      <div class="cat-card-info">
+        <span class="cat-card-label">Portréty</span>
+        <span class="cat-card-count" id="count-portraits">—</span>
+        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+      </div>
     </button>
-    <button class="filter-btn" data-filter="portraits" aria-pressed="false">
-      <span class="filter-label">Portréty</span>
-      <span class="filter-count" id="count-portraits">—</span>
+    <button class="cat-card" data-cat="abstract" type="button" aria-label="Otevřít galerii Abstraktní portréty">
+      <div class="cat-card-media">
+        <img src="images/IMG_7135.JPG" alt="Ukázka abstraktního portrétu — platební karta Slovenská sporiteľňa" loading="lazy">
+      </div>
+      <div class="cat-card-info">
+        <span class="cat-card-label">Abstraktní portréty</span>
+        <span class="cat-card-count" id="count-abstract">—</span>
+        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+      </div>
     </button>
-    <button class="filter-btn" data-filter="abstract" aria-pressed="false">
-      <span class="filter-label">Abstraktní portréty</span>
-      <span class="filter-count" id="count-abstract">—</span>
-    </button>
-    <button class="filter-btn" data-filter="paintings" aria-pressed="false">
-      <span class="filter-label">Malby</span>
-      <span class="filter-count" id="count-paintings">—</span>
+    <button class="cat-card" data-cat="paintings" type="button" aria-label="Otevřít galerii Malby">
+      <div class="cat-card-media">
+        <img src="images/IMG_5919.JPG" alt="Ukázka malby — motorka „Ride Or Die“" loading="lazy">
+      </div>
+      <div class="cat-card-info">
+        <span class="cat-card-label">Malby</span>
+        <span class="cat-card-count" id="count-paintings">—</span>
+        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+      </div>
     </button>
   </div>
 
-  <div class="work-desc">
-    <p class="work-desc-text" data-cat="all">Všechny kategorie dohromady. Klikni na některý z filtrů pro zaměření.</p>
-    <p class="work-desc-text" data-cat="portraits" hidden>Tváře, které zůstaly.</p>
-    <p class="work-desc-text" data-cat="abstract" hidden>Když portrét není portrét.</p>
-    <p class="work-desc-text" data-cat="paintings" hidden>Ostatní malířské práce.</p>
-  </div>
-
-  <div class="work-grid" id="workGrid">
+  <div class="work-grid" id="workGrid" hidden aria-hidden="true">
     <article class="work-tile wide" data-cat="portraits" style="--delay:0">
       <div class="tile-media">
         <img src="images/IMG_7136.JPG" alt="Portrét Lewise Hamiltona — akryl, červené pozadí s logem Ferrari" loading="lazy" width="1200" height="1200">
@@ -611,6 +618,18 @@
   </div>
 </footer>
 
+<!-- GALLERY MODAL -->
+<div class="gallery-modal" id="galleryModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="galleryLabel">
+  <header class="gallery-header">
+    <div class="gallery-header-meta">
+      <span class="gallery-header-eyebrow">Galerie</span>
+      <span class="gallery-header-label" id="galleryLabel">—</span>
+    </div>
+    <button class="gallery-close" id="galleryClose" type="button" aria-label="Zavřít galerii">✕</button>
+  </header>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detail obrazu">
   <button class="lightbox-close" id="lightboxClose" aria-label="Zavřít náhled" type="button">✕</button>
@@ -624,11 +643,11 @@
     Používáme cookies pro analýzu návštěvnosti. Podrobnosti v Zásadách ochrany.
   </p>
   <div class="cookie-actions">
-    <button class="btn btn-ghost btn-small" onclick="handleCookie(false)">Odmítnout</button>
-    <button class="btn btn-primary btn-small" onclick="handleCookie(true)">Přijmout</button>
+    <button class="btn btn-ghost btn-small" data-cookie="decline" type="button">Odmítnout</button>
+    <button class="btn btn-primary btn-small" data-cookie="accept" type="button">Přijmout</button>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>

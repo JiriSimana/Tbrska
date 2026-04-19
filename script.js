@@ -31,53 +31,21 @@
     if (el) observer.observe(el);
   });
 
-  /* ======== WORK FILTER ======== */
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  /* ======== WORK — COUNTS PER CATEGORY ======== */
   const tiles = document.querySelectorAll('.work-tile');
-  const descTexts = document.querySelectorAll('.work-desc-text');
-  const emptyBox = document.querySelector('.work-empty');
-
-  // Count tiles per category
-  const categoryCounts = { all: tiles.length, portraits: 0, abstract: 0, paintings: 0 };
+  const categoryCounts = { portraits: 0, abstract: 0, paintings: 0 };
   tiles.forEach(t => {
     const cat = t.dataset.cat;
     if (categoryCounts[cat] !== undefined) categoryCounts[cat]++;
   });
-  document.getElementById('count-all').textContent = categoryCounts.all;
-  document.getElementById('count-portraits').textContent = categoryCounts.portraits;
-  document.getElementById('count-abstract').textContent = categoryCounts.abstract;
-  document.getElementById('count-paintings').textContent = categoryCounts.paintings;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-
-      let visibleCount = 0;
-      tiles.forEach((tile, i) => {
-        const show = filter === 'all' || tile.dataset.cat === filter;
-        if (show) {
-          tile.classList.remove('hidden');
-          tile.style.setProperty('--delay', i);
-          visibleCount++;
-        } else {
-          tile.classList.add('hidden');
-        }
-      });
-
-      descTexts.forEach(d => {
-        d.hidden = d.dataset.cat !== filter;
-      });
-
-      if (emptyBox) emptyBox.hidden = visibleCount > 0;
-    });
-  });
+  const fmtCount = (n) => `${n} ${n === 1 ? 'obraz' : (n >= 2 && n <= 4 ? 'obrazy' : 'obrazů')}`;
+  const setCount = (id, n) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = fmtCount(n);
+  };
+  setCount('count-portraits', categoryCounts.portraits);
+  setCount('count-abstract', categoryCounts.abstract);
+  setCount('count-paintings', categoryCounts.paintings);
 
   /* ======== LIGHTBOX ======== */
   const lightbox = document.getElementById('lightbox');
@@ -85,7 +53,7 @@
   const lightboxCap = document.getElementById('lightboxCap');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  const openLightbox = (tile) => {
+  const openLightboxFromTile = (tile) => {
     const img = tile.querySelector('img');
     if (!img) return;
     const title = tile.querySelector('.tile-title')?.textContent?.trim() || '';
@@ -100,28 +68,67 @@
   const closeLightbox = () => {
     lightbox.hidden = true;
     lightbox.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('lightbox-open');
+    if (galleryModal.hidden) document.body.classList.remove('lightbox-open');
     lightboxImg.src = '';
   };
-
-  tiles.forEach(tile => {
-    tile.setAttribute('role', 'button');
-    tile.setAttribute('tabindex', '0');
-    tile.addEventListener('click', () => openLightbox(tile));
-    tile.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(tile);
-      }
-    });
-  });
 
   lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
+
+  /* ======== CATEGORY GALLERY MODAL ======== */
+  const catCards = document.querySelectorAll('.cat-card');
+  const galleryModal = document.getElementById('galleryModal');
+  const galleryGrid = document.getElementById('galleryGrid');
+  const galleryLabel = document.getElementById('galleryLabel');
+  const galleryClose = document.getElementById('galleryClose');
+
+  const catLabels = {
+    portraits: 'Portréty',
+    abstract: 'Abstraktní portréty',
+    paintings: 'Malby'
+  };
+
+  const openGallery = (cat) => {
+    galleryLabel.textContent = catLabels[cat] || cat;
+    galleryGrid.innerHTML = '';
+    document.querySelectorAll(`.work-tile[data-cat="${cat}"]`).forEach(tile => {
+      const srcImg = tile.querySelector('img');
+      if (!srcImg) return;
+      const item = document.createElement('button');
+      item.className = 'gallery-item';
+      item.type = 'button';
+      item.setAttribute('aria-label', `Otevřít detail: ${srcImg.alt || ''}`);
+      const imgEl = document.createElement('img');
+      imgEl.src = srcImg.src;
+      imgEl.alt = srcImg.alt || '';
+      imgEl.loading = 'lazy';
+      item.appendChild(imgEl);
+      item.addEventListener('click', () => openLightboxFromTile(tile));
+      galleryGrid.appendChild(item);
+    });
+    galleryModal.hidden = false;
+    galleryModal.setAttribute('aria-hidden', 'false');
+    galleryModal.scrollTop = 0;
+    document.body.classList.add('lightbox-open');
+  };
+  const closeGallery = () => {
+    galleryModal.hidden = true;
+    galleryModal.setAttribute('aria-hidden', 'true');
+    galleryGrid.innerHTML = '';
+    if (lightbox.hidden) document.body.classList.remove('lightbox-open');
+  };
+
+  catCards.forEach(card => {
+    card.addEventListener('click', () => openGallery(card.dataset.cat));
+  });
+  galleryClose.addEventListener('click', closeGallery);
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    if (e.key !== 'Escape') return;
+    if (!lightbox.hidden) { closeLightbox(); return; }
+    if (!galleryModal.hidden) closeGallery();
   });
 
   /* ======== CONTACT FORM ======== */
@@ -182,12 +189,26 @@
   /* ======== COOKIE BANNER ======== */
   const banner = document.getElementById('cookieBanner');
   const cookieConsent = localStorage.getItem('tbrska_cookie_consent');
+  const hideBanner = () => {
+    banner.hidden = true;
+    banner.style.display = 'none';
+  };
   if (!cookieConsent) {
-    setTimeout(() => { banner.hidden = false; }, 1500);
+    setTimeout(() => {
+      banner.hidden = false;
+      banner.style.display = '';
+    }, 1500);
   }
+  document.querySelectorAll('[data-cookie]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const accept = btn.dataset.cookie === 'accept';
+      localStorage.setItem('tbrska_cookie_consent', accept ? 'accepted' : 'declined');
+      hideBanner();
+    });
+  });
   window.handleCookie = (accept) => {
     localStorage.setItem('tbrska_cookie_consent', accept ? 'accepted' : 'declined');
-    banner.hidden = true;
+    hideBanner();
   };
 
   /* ======== LANGUAGE SWITCH (CZ/SK — hook for future i18n) ======== */
