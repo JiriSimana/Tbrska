@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -49,7 +49,6 @@
   <ul class="nav-links">
     <li><a href="#work" data-cs="Portfolio" data-sk="Portfólio">Portfolio</a></li>
     <li><a href="#studio" data-cs="Studio" data-sk="Ateliér">Studio</a></li>
-    <li><a href="#services" data-cs="Služby" data-sk="Služby">Služby</a></li>
     <li><a href="#contact" data-cs="Kontakt" data-sk="Kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-lang">
@@ -122,7 +121,7 @@
   <div class="work-categories" id="workCategories">
     <button class="cat-card" data-cat="portraits" type="button" aria-label="Otevřít galerii Portréty">
       <div class="cat-card-media">
-        <img src="images/IMG_7136.JPG" alt="Ukázka portrétu — Lewis Hamilton na červeném pozadí Ferrari" loading="lazy">
+        <img src="images/portret Hamilton.JPG" alt="Ukázka z galerie Portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Portréty</span>
@@ -132,7 +131,7 @@
     </button>
     <button class="cat-card" data-cat="abstract" type="button" aria-label="Otevřít galerii Abstraktní portréty">
       <div class="cat-card-media">
-        <img src="images/IMG_7135.JPG" alt="Ukázka abstraktního portrétu — platební karta Slovenská sporiteľňa" loading="lazy">
+        <img src="images/abstraktní portréty - Miyagi.JPG" alt="Ukázka z galerie Abstraktní portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Abstraktní portréty</span>
@@ -142,7 +141,7 @@
     </button>
     <button class="cat-card" data-cat="paintings" type="button" aria-label="Otevřít galerii Malby">
       <div class="cat-card-media">
-        <img src="images/IMG_5919.JPG" alt="Ukázka malby — motorka „Ride Or Die“" loading="lazy">
+        <img src="images/malba Hamilton.JPG" alt="Ukázka z galerie Malby" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Malby</span>
@@ -153,186 +152,31 @@
   </div>
 
   <div class="work-grid" id="workGrid" hidden aria-hidden="true">
-    <article class="work-tile wide" data-cat="portraits" style="--delay:0">
-      <div class="tile-media">
-        <img src="images/IMG_7136.JPG" alt="Portrét Lewise Hamiltona — akryl, červené pozadí s logem Ferrari" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Hamilton</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:1">
-      <div class="tile-media">
-        <img src="images/IMG_4574.JPG" alt="Portrét Sebastiana Vettela — akryl na plátně" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Vettel</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile wide" data-cat="abstract" style="--delay:2">
-      <div class="tile-media">
-        <img src="images/IMG_7342.JPG" alt="Pop-artová kompozice — Monopoly a Bugs Bunny, „Success Is Yours“" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Abstraktní portrét</span>
-          <span class="tile-title">Success Is Yours</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile tall" data-cat="portraits" style="--delay:3">
-      <div class="tile-media">
-        <img src="images/IMG_9131.JPG" alt="Portrét ženy v závodní přilbě Ferrari — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Ferrari</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:4">
-      <div class="tile-media">
-        <img src="images/IMG_8062.JPG" alt="Portrét ženy z perokresby a slov — černobílé" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Slova a tvář</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile wide" data-cat="abstract" style="--delay:5">
-      <div class="tile-media">
-        <img src="images/IMG_7135.JPG" alt="Pop-artová platební karta Slovenská sporiteľňa — „Never Give Up“" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Abstraktní portrét</span>
-          <span class="tile-title">Community Service</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:6">
-      <div class="tile-media">
-        <img src="images/IMG_3197.JPG" alt="Portrét muže — perokresba s textovou texturou" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">V čmárách</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:7">
-      <div class="tile-media">
-        <img src="images/IMG_1757.JPG" alt="Portrét muže s dredy a symboly — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Pokora</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile tall" data-cat="paintings" style="--delay:8">
-      <div class="tile-media">
-        <img src="images/IMG_9935.JPG" alt="Kresba postavy kulturisty — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Malba</span>
-          <span class="tile-title">Postava</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:9">
-      <div class="tile-media">
-        <img src="images/IMG_3790.JPG" alt="Portrét muže v kukle — akryl" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Bez slov</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="abstract" style="--delay:10">
-      <div class="tile-media">
-        <img src="images/IMG_7133.JPG" alt="Pop-artový Daniel Ricciardo DR3 — „Enjoy The Butterflies“" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Abstraktní portrét</span>
-          <span class="tile-title">Enjoy The Butterflies</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile wide" data-cat="portraits" style="--delay:11">
-      <div class="tile-media">
-        <img src="images/IMG_7137.JPG" alt="Skupinový portrét tří mužů — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Tři</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="abstract" style="--delay:12">
-      <div class="tile-media">
-        <img src="images/IMG_8051.JPG" alt="Pop-artový Bugs Bunny v Supreme kabátu — „Walk Like A Boss“" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Abstraktní portrét</span>
-          <span class="tile-title">Walk Like A Boss</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile wide" data-cat="paintings" style="--delay:13">
-      <div class="tile-media">
-        <img src="images/IMG_5919.JPG" alt="Malba motorky s nápisem „Ride Or Die“ — akryl" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Malba</span>
-          <span class="tile-title">Ride Or Die</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:14">
-      <div class="tile-media">
-        <img src="images/IMG_7138.JPG" alt="Portrét muže se zakrytou tváří — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Ukryté</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="abstract" style="--delay:15">
-      <div class="tile-media">
-        <img src="images/IMG_8697.JPG" alt="Pop-artový Strýček Skrblík s bitcoinem — „Don't Trust Banks“" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Abstraktní portrét</span>
-          <span class="tile-title">Don't Trust Banks</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile wide" data-cat="portraits" style="--delay:16">
-      <div class="tile-media">
-        <img src="images/IMG_7139.JPG" alt="Skupinový portrét tří mužů s brýlemi — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Trio</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:17">
-      <div class="tile-media">
-        <img src="images/IMG_7134.JPG" alt="Dvojportrét páru — olej v sépiových tónech" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Dvojice</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:18">
-      <div class="tile-media">
-        <img src="images/FDA89AB0-B611-4A2A-949E-43CB89216A44.JPG" alt="Portrét muže v brýlích a saku — tužka" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Úsměv</span>
-        </div>
-      </div>
-    </article>
-    <article class="work-tile" data-cat="portraits" style="--delay:19">
-      <div class="tile-media">
-        <img src="images/IMG_0026.JPG" alt="Portrét muže s textem v pozadí — perokresba" loading="lazy" width="1200" height="1200">
-        <div class="tile-overlay">
-          <span class="tile-cat">Portrét</span>
-          <span class="tile-title">Myšlenky</span>
-        </div>
-      </div>
-    </article>
+    <!-- Portréty -->
+    <article class="work-tile" data-cat="portraits" data-title="David"><img src="images/portret - David.JPG" alt="Portrét — David" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Ferrari"><img src="images/portret Ferrari.JPG" alt="Portrét — Ferrari" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Gyuris, Susa, Szalai"><img src="images/portret Gyuris, Susa, Szalai.JPG" alt="Portrét — Gyuris, Susa, Szalai" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Gyuris"><img src="images/portret Gyuris.JPG" alt="Portrét — Gyuris" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Hamilton"><img src="images/portret Hamilton.JPG" alt="Portrét — Hamilton" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Yzomandias"><img src="images/portret Yzomandias.JPG" alt="Portrét — Yzomandias" loading="lazy"></article>
+    <article class="work-tile" data-cat="portraits" data-title="Trio"><img src="images/portrét trio.JPG" alt="Portrét — Trio" loading="lazy"></article>
+
+    <!-- Abstraktní portréty -->
+    <article class="work-tile" data-cat="abstract" data-title="Bára"><img src="images/abstraktní portrety Bára.JPG" alt="Abstraktní portrét — Bára" loading="lazy"></article>
+    <article class="work-tile" data-cat="abstract" data-title="Miyagi"><img src="images/abstraktní portréty - Miyagi.JPG" alt="Abstraktní portrét — Miyagi" loading="lazy"></article>
+    <article class="work-tile" data-cat="abstract" data-title="Stromae"><img src="images/abstraktní portréty - Stromae.JPG" alt="Abstraktní portrét — Stromae" loading="lazy"></article>
+
+    <!-- Malby -->
+    <article class="work-tile" data-cat="paintings" data-title="Anatomie"><img src="images/malba anatomie.JPG" alt="Malba — Anatomie" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Community Service"><img src="images/malba community service.JPG" alt="Malba — Community Service" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Don't Trust Banks"><img src="images/malba dont trust banks.JPG" alt="Malba — Don't Trust Banks" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Hamilton"><img src="images/malba Hamilton.JPG" alt="Malba — Hamilton" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Hrdličky"><img src="images/malba hrdličky.JPG" alt="Malba — Hrdličky" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Ricciardo"><img src="images/malba Ricciardo.JPG" alt="Malba — Ricciardo" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Ride Or Die"><img src="images/malba ride or die.JPG" alt="Malba — Ride Or Die" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Success Is Yours"><img src="images/malba succes is yours.JPG" alt="Malba — Success Is Yours" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Vettel"><img src="images/malba Vettel.JPG" alt="Malba — Vettel" loading="lazy"></article>
+    <article class="work-tile" data-cat="paintings" data-title="Walk Like A Boss"><img src="images/malba walk like a boss.JPG" alt="Malba — Walk Like A Boss" loading="lazy"></article>
   </div>
 
   <div class="work-empty" hidden>
@@ -391,90 +235,6 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section services" id="services">
-  <div class="section-header">
-    <div class="section-label">
-      <span class="label-num">03</span>
-      <span class="label-text">Služby</span>
-    </div>
-    <h2 class="section-title">
-      Co se děje <em>mezi mnou</em><br>a plátnem
-    </h2>
-    <p class="section-lead">
-      Tři typy zakázek. Jeden společný jmenovatel: originál. Cenu počítám vždy na míru — závisí na velikosti, technice a náročnosti.
-    </p>
-  </div>
-
-  <div class="services-grid">
-    <article class="service">
-      <div class="service-mark" data-service="portrait">
-        <span class="service-num">I.</span>
-        <span class="service-dot" aria-hidden="true"></span>
-      </div>
-      <h3 class="service-name">Portrét</h3>
-      <p class="service-short">
-        Realistický i stylizovaný portrét z fotografie. Pro milovanou osobu, vzpomínku nebo dárek, co zůstane.
-      </p>
-      <div class="service-detail">
-        <p>
-          Portréty maluji z fotografií, které mi pošleš. Nejvíc mi pomáhá, když je tam světlo z okna a nepózovaný moment — ale žádné pravidlo neplatí. Pracuji olejem nebo akrylem, podle toho, jakou náladu obraz potřebuje.
-        </p>
-        <p>
-          Může to být portrét dítěte, partnera, babičky, která už tady není, nebo někoho, koho jsi chtěla namalovat, ale nikdy ses k tomu nedostala. Všechno je v pořádku.
-        </p>
-        <p class="service-meta">Dodání: <strong>3–6 týdnů</strong> od potvrzení</p>
-      </div>
-      <a href="#contact" class="service-cta">Napsat o portrétu <span class="btn-arrow">→</span></a>
-    </article>
-
-    <article class="service">
-      <div class="service-mark" data-service="abstract">
-        <span class="service-num">II.</span>
-        <span class="service-dot" aria-hidden="true"></span>
-      </div>
-      <h3 class="service-name">Abstraktní portréty</h3>
-      <p class="service-short">
-        Abstraktní kompozice na zakázku. Barevná paleta a rozměry dle zadání a prostoru.
-      </p>
-      <div class="service-detail">
-        <p>
-          Abstrakce jsou moje nejsvobodnější zóna. Pracuji intuicí, vrstvami a barvou, která sama říká, kam chce jít.
-        </p>
-        <p>
-          Obvykle je to proces: povíš mi, co má obraz dělat s místností — uklidnit, probudit, vyprávět? Jakou máš kolem sebe paletu? Jakou hudbu poslouchaš, když tam jsi? A z toho se rodí plátno.
-        </p>
-        <p>
-          Žádné dva obrazy nejsou stejné. Často ani já neumím dopředu říct, jak to dopadne. Právě to je na tom to nejlepší.
-        </p>
-        <p class="service-meta">Dodání: <strong>2–5 týdnů</strong></p>
-      </div>
-      <a href="#contact" class="service-cta">Chci ji <span class="btn-arrow">→</span></a>
-    </article>
-
-    <article class="service">
-      <div class="service-mark" data-service="gift">
-        <span class="service-num">III.</span>
-        <span class="service-dot" aria-hidden="true"></span>
-      </div>
-      <h3 class="service-name">Obraz na míru jako dárek</h3>
-      <p class="service-short">
-        Protože parfém už měla.
-      </p>
-      <div class="service-detail">
-        <p>
-          Stačí říct: pro koho, proč a do kdy. Zbytek je na mně. Včetně toho, aby o tom nikdo jiný nevěděl.
-        </p>
-        <p>
-          Pomůžu ti vybrat formát, vymyslet námět, připravit všechno tak, aby to bylo překvapení. Diskrétně, bez spoilerů. Funguje to na narozeniny, výročí, svatby, ale i prostě tak.
-        </p>
-        <p class="service-meta">Ideálně: <strong>4–8 týdnů předem</strong></p>
-      </div>
-      <a href="#contact" class="service-cta">Chci překvapit <span class="btn-arrow">→</span></a>
-    </article>
-  </div>
-</section>
-
 <!-- ============ PROCESS STRIP ============ -->
 <section class="process" aria-label="Jak to u mě funguje">
   <div class="process-header">
@@ -509,7 +269,7 @@
 <section class="section testimonials" id="testimonials">
   <div class="section-header section-header--centered">
     <div class="section-label section-label--centered">
-      <span class="label-num">04</span>
+      <span class="label-num">03</span>
       <span class="label-text">Reference</span>
     </div>
     <h2 class="section-title">
@@ -535,7 +295,7 @@
   <div class="contact-grid">
     <div class="contact-copy">
       <div class="section-label">
-        <span class="label-num">05</span>
+        <span class="label-num">04</span>
         <span class="label-text">Kontakt</span>
       </div>
       <h2 class="section-title">
@@ -602,7 +362,6 @@
     <ul class="footer-links">
       <li><a href="#work">Portfolio</a></li>
       <li><a href="#studio">Studio</a></li>
-      <li><a href="#services">Služby</a></li>
       <li><a href="#contact">Kontakt</a></li>
     </ul>
     <ul class="footer-social">
@@ -648,6 +407,6 @@
   </div>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

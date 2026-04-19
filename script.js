@@ -14,7 +14,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ======== ACTIVE LINK ON SCROLL ======== */
-  const sections = ['#home', '#work', '#studio', '#services', '#testimonials', '#contact'];
+  const sections = ['#home', '#work', '#studio', '#testimonials', '#contact'];
   const navLinks = document.querySelectorAll('.nav-links a');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -56,11 +56,10 @@
   const openLightboxFromTile = (tile) => {
     const img = tile.querySelector('img');
     if (!img) return;
-    const title = tile.querySelector('.tile-title')?.textContent?.trim() || '';
-    const cat = tile.querySelector('.tile-cat')?.textContent?.trim() || '';
+    const title = tile.dataset.title || '';
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
-    lightboxCap.textContent = cat && title ? `${cat} — ${title}` : (title || cat);
+    lightboxCap.textContent = title;
     lightbox.hidden = false;
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
@@ -96,15 +95,22 @@
     document.querySelectorAll(`.work-tile[data-cat="${cat}"]`).forEach(tile => {
       const srcImg = tile.querySelector('img');
       if (!srcImg) return;
+      const title = tile.dataset.title || '';
       const item = document.createElement('button');
       item.className = 'gallery-item';
       item.type = 'button';
-      item.setAttribute('aria-label', `Otevřít detail: ${srcImg.alt || ''}`);
+      item.setAttribute('aria-label', `Otevřít detail: ${title || srcImg.alt}`);
       const imgEl = document.createElement('img');
       imgEl.src = srcImg.src;
       imgEl.alt = srcImg.alt || '';
       imgEl.loading = 'lazy';
       item.appendChild(imgEl);
+      if (title) {
+        const cap = document.createElement('span');
+        cap.className = 'gallery-item-caption';
+        cap.textContent = title;
+        item.appendChild(cap);
+      }
       item.addEventListener('click', () => openLightboxFromTile(tile));
       galleryGrid.appendChild(item);
     });
