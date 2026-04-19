@@ -79,6 +79,51 @@
     });
   });
 
+  /* ======== LIGHTBOX ======== */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  const openLightbox = (tile) => {
+    const img = tile.querySelector('img');
+    if (!img) return;
+    const title = tile.querySelector('.tile-title')?.textContent?.trim() || '';
+    const cat = tile.querySelector('.tile-cat')?.textContent?.trim() || '';
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || '';
+    lightboxCap.textContent = cat && title ? `${cat} — ${title}` : (title || cat);
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  };
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightboxImg.src = '';
+  };
+
+  tiles.forEach(tile => {
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
+    tile.addEventListener('click', () => openLightbox(tile));
+    tile.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(tile);
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+  });
+
   /* ======== CONTACT FORM ======== */
   const form = document.getElementById('contactForm');
   const feedback = document.getElementById('formFeedback');
