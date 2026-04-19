@@ -239,7 +239,7 @@
 
   /* ======== SCROLL REVEAL ======== */
   const revealTargets = document.querySelectorAll(
-    '.section-header, .strip-inner, .studio-meta, .studio-copy, .service, .process-step, .testi-empty, .contact-copy, .contact-form'
+    '.section-header, .strip-inner, .studio-meta, .studio-copy, .process-step, .review, .reaction, .contact-copy, .contact-form'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
 

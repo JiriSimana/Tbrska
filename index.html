@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -98,7 +98,7 @@
   <div class="strip-inner">
     <p class="strip-text">
       <em>tbrska</em> — Dominika Táborská. Výtvarnice, která maluje to, co se do fotky nevejde.
-      Olej, akryl, uhel. Plátna, která visí v bytech v Česku, na Slovensku i dál.
+      Akryl, grafit. Plátna, která visí v bytech v Česku, na Slovensku i dál.
     </p>
   </div>
 </section>
@@ -121,7 +121,7 @@
   <div class="work-categories" id="workCategories">
     <button class="cat-card" data-cat="portraits" type="button" aria-label="Otevřít galerii Portréty">
       <div class="cat-card-media">
-        <img src="images/portret Hamilton.JPG" alt="Ukázka z galerie Portréty" loading="lazy">
+        <img src="images/portret Gyuris.JPG" alt="Ukázka z galerie Portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Portréty</span>
@@ -131,7 +131,7 @@
     </button>
     <button class="cat-card" data-cat="abstract" type="button" aria-label="Otevřít galerii Abstraktní portréty">
       <div class="cat-card-media">
-        <img src="images/abstraktní portréty - Miyagi.JPG" alt="Ukázka z galerie Abstraktní portréty" loading="lazy">
+        <img src="images/abstraktní portréty - Stromae.JPG" alt="Ukázka z galerie Abstraktní portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Abstraktní portréty</span>
@@ -141,7 +141,7 @@
     </button>
     <button class="cat-card" data-cat="paintings" type="button" aria-label="Otevřít galerii Malby">
       <div class="cat-card-media">
-        <img src="images/malba Hamilton.JPG" alt="Ukázka z galerie Malby" loading="lazy">
+        <img src="images/malba dont trust banks.JPG" alt="Ukázka z galerie Malby" loading="lazy">
       </div>
       <div class="cat-card-info">
         <span class="cat-card-label">Malby</span>
@@ -153,6 +153,7 @@
 
   <div class="work-grid" id="workGrid" hidden aria-hidden="true">
     <!-- Portréty -->
+    <article class="work-tile" data-cat="portraits" data-title="Anatomie"><img src="images/portret anatomie.JPG" alt="Portrét — Anatomie" loading="lazy"></article>
     <article class="work-tile" data-cat="portraits" data-title="David"><img src="images/portret - David.JPG" alt="Portrét — David" loading="lazy"></article>
     <article class="work-tile" data-cat="portraits" data-title="Ferrari"><img src="images/portret Ferrari.JPG" alt="Portrét — Ferrari" loading="lazy"></article>
     <article class="work-tile" data-cat="portraits" data-title="Gyuris, Susa, Szalai"><img src="images/portret Gyuris, Susa, Szalai.JPG" alt="Portrét — Gyuris, Susa, Szalai" loading="lazy"></article>
@@ -167,7 +168,6 @@
     <article class="work-tile" data-cat="abstract" data-title="Stromae"><img src="images/abstraktní portréty - Stromae.JPG" alt="Abstraktní portrét — Stromae" loading="lazy"></article>
 
     <!-- Malby -->
-    <article class="work-tile" data-cat="paintings" data-title="Anatomie"><img src="images/malba anatomie.JPG" alt="Malba — Anatomie" loading="lazy"></article>
     <article class="work-tile" data-cat="paintings" data-title="Community Service"><img src="images/malba community service.JPG" alt="Malba — Community Service" loading="lazy"></article>
     <article class="work-tile" data-cat="paintings" data-title="Don't Trust Banks"><img src="images/malba dont trust banks.JPG" alt="Malba — Don't Trust Banks" loading="lazy"></article>
     <article class="work-tile" data-cat="paintings" data-title="Hamilton"><img src="images/malba Hamilton.JPG" alt="Malba — Hamilton" loading="lazy"></article>
@@ -202,10 +202,10 @@
         <span class="label-text">Studio</span>
       </div>
       <p class="studio-location">Česko · Slovensko</p>
-      <p class="studio-working">Pracuji v olejích, akrylu, uhlu.<br>Pro sebe nejradši v tichu.</p>
+      <p class="studio-working">Pracuji s akrylem a grafitem.<br>Pro sebe nejradši v tichu.</p>
       <ul class="studio-facts">
         <li><span>CZ · SK · HU</span><small>Dorozumím se</small></li>
-        <li><span>Olej · Akryl · Uhel</span><small>Materiály</small></li>
+        <li><span>Akryl · Grafit</span><small>Materiály</small></li>
         <li><span>3–6 týdnů</span><small>Obvyklá lhůta</small></li>
         <li><span>Na zakázku</span><small>Vždy originál</small></li>
       </ul>
@@ -270,23 +270,53 @@
   <div class="section-header section-header--centered">
     <div class="section-label section-label--centered">
       <span class="label-num">03</span>
-      <span class="label-text">Reference</span>
+      <span class="label-text">Reference &amp; reakce</span>
     </div>
     <h2 class="section-title">
-      Co říkají ti, kterým <em>obraz už visí</em>
+      Co říkají ti, <em>pro které maluji</em>
     </h2>
     <p class="section-lead">
-      Pár slov od lidí, kteří si nechali namalovat něco svého.
+      Dlouhé reference i krátké reakce na konkrétní obrazy — některé v maďarštině, tak jak přišly.
     </p>
   </div>
 
-  <div class="testi-empty">
-    <p class="testi-empty-text">
-      Pár referencí dorazí brzy. Mezitím si klidně mrkni na Instagram.
-    </p>
-    <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener" class="btn btn-ghost">
-      @taborskaarts <span class="btn-arrow">↗</span>
-    </a>
+  <div class="reviews">
+    <figure class="review">
+      <blockquote class="review-quote">
+        <p>S Dominikou mám veľmi dobrú skúsenosť. Namaľovala mi krásne obrazy presne podľa toho, čo som si predstavoval. Všetko prebehlo v pohode, bez komplikácií, a výsledok ma fakt potešil. Obrazy už mám zavesené na stene a som s nimi veľmi spokojný. Určite si od nej dám niečo namaľovať aj nabudúce, keď ma zaujme nejaký ďalší motív.</p>
+      </blockquote>
+      <figcaption class="review-attr">— Kristián K.</figcaption>
+    </figure>
+  </div>
+
+  <div class="reactions">
+    <span class="reactions-label">Reakce na obrazy</span>
+    <ul class="reactions-list">
+      <li class="reaction">
+        <p class="reaction-text" lang="hu">„nagyon extra”</p>
+        <div class="reaction-meta">
+          <span class="reaction-author">Susa</span>
+          <span class="reaction-sep" aria-hidden="true">·</span>
+          <span class="reaction-ref">k obrazu Gyuris, Susa, Szalai</span>
+        </div>
+      </li>
+      <li class="reaction">
+        <p class="reaction-text" lang="hu">„wowwww ez nagyon durva, gyönyörü lett”</p>
+        <div class="reaction-meta">
+          <span class="reaction-author">Gyuris</span>
+          <span class="reaction-sep" aria-hidden="true">·</span>
+          <span class="reaction-ref">k obrazu Gyuris</span>
+        </div>
+      </li>
+      <li class="reaction">
+        <p class="reaction-text">„woooooo”</p>
+        <div class="reaction-meta">
+          <span class="reaction-author">Yzomandias</span>
+          <span class="reaction-sep" aria-hidden="true">·</span>
+          <span class="reaction-ref">k obrazu Yzomandias</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -407,6 +437,6 @@
   </div>
 </div>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>

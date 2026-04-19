@@ -1119,22 +1119,96 @@ body {
 }
 
 /* ============ TESTIMONIALS ============ */
-.testi-empty {
-  text-align: center;
-  padding: 3rem 0;
+.reviews {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
+  max-width: 52rem;
+  margin: 0 auto 3.5rem;
 }
-.testi-empty-text {
+.review {
+  background: var(--cream-warm);
+  border-left: 3px solid var(--wine);
+  border-radius: 4px;
+  padding: 2rem 2.25rem;
+  margin: 0;
+}
+.review-quote {
+  margin: 0 0 1.1rem;
+  font-family: var(--f-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--text);
+  font-style: italic;
+  font-weight: 300;
+}
+.review-quote p { margin: 0; }
+.review-attr {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  color: var(--wine);
+  font-style: italic;
+}
+
+.reactions {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.reactions-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.reactions-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .reactions-list { grid-template-columns: 1fr; }
+}
+.reaction {
+  background: var(--cream);
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  padding: 1.35rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.reaction-text {
   font-family: var(--f-display);
   font-style: italic;
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  max-width: 36ch;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  color: var(--wine);
+  line-height: 1.35;
+  margin: 0;
+  text-wrap: balance;
 }
+.reaction-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+  margin-top: auto;
+}
+.reaction-author {
+  font-weight: 600;
+  color: var(--wine);
+  letter-spacing: 0.02em;
+}
+.reaction-sep { opacity: 0.5; }
+.reaction-ref { font-style: italic; }
 
 /* ============ CONTACT ============ */
 .contact {
