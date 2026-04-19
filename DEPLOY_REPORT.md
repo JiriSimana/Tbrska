@@ -12,9 +12,10 @@
 |---|---|---|
 | 1. Audit | hotovo | 11 bodů identifikováno, všechny vyřešeny |
 | 2. Vylepšení | hotovo | 9 SVG placeholderů, favicon, OG, sitemap, robots, CSS/JS fixy |
-| 3. Git | hotovo lokálně | commit `fa0266c` na `main` |
-| 3. GitHub push | ⏳ **čeká na tebe** | návod níž — stačí 5 minut |
-| 4. Vercel deploy | ⏳ **čeká na tebe** | návod níž — 2 minuty po GitHub pushi |
+| 3. Git lokál | hotovo | commity `fa0266c`, `3250591` na `main` |
+| 3. GitHub push | ✅ **hotovo** | https://github.com/JiriSimana/Tbrska |
+| 4. Vercel projekt | ✅ existuje | `tbrska` v týmu `jirisimana-smartcaseczs-projects` |
+| 4. Vercel deploy | ⏳ **čeká na 30s klik** | návod níž — linknout GitHub repo v UI |
 | 5. Tento report | hotovo | čteš ho |
 
 ---
@@ -23,69 +24,60 @@
 
 | Co | URL |
 |---|---|
-| Lokální náhled (teď) | http://localhost:8000 |
-| GitHub repo | https://github.com/JiriSimana/Tbrska _(po pushi)_ |
-| Vercel production | `https://tbrska-XXXX.vercel.app` _(po deployi — doplň)_ |
+| Lokální náhled | http://localhost:8000 |
+| GitHub repo | https://github.com/JiriSimana/Tbrska ✅ |
+| Vercel projekt | https://vercel.com/jirisimana-smartcaseczs-projects/tbrska |
+| Vercel production | `https://tbrska.vercel.app` _(po linknutí repa)_ |
 | Doména | _— odloženo, domluvíme_ |
 
 ---
 
-## 🚀 Krok 3 — Push na GitHub (ručně, ~5 min)
+## 🚀 Krok 3 — GitHub push ✅ HOTOVO
 
-`gh` CLI nemáš, takže přes web + terminál:
+Repo je živé: https://github.com/JiriSimana/Tbrska
 
-### 3.1 Vytvoř prázdné repo na GitHubu
-
-1. Otevři https://github.com/new
-2. Vyplň:
-   - **Repository name:** `Tbrska`
-   - **Owner:** `JiriSimana`
-   - **Privacy:** Private ✅
-   - **NEPŘIDÁVEJ** README / .gitignore / license — už je máme lokálně
-3. Klikni **Create repository**
-
-### 3.2 Push z terminálu
-
-V Terminal.app (nebo v IDE integrovaném terminálu) z aktuální složky `Web_dominika`:
-
-```bash
-cd "/Users/jirisimana/Desktop/Webové stránky - kodování/Web_dominika"
-git remote add origin https://github.com/JiriSimana/Tbrska.git
-git push -u origin main
-```
-
-Při prvním pushi si tě GitHub vyžádá autorizaci:
-- **HTTPS + token:** https://github.com/settings/tokens → Generate new (classic) → scope `repo` → použij token jako heslo
-- **nebo SSH:** `git remote set-url origin git@github.com:JiriSimana/Tbrska.git` (pokud máš klíč)
-
-Po pushi otevři repo v prohlížeči a zkontroluj, že všech 19 souborů tam je.
+Commity na `main`:
+- `fa0266c` feat: initial tbrska portfolio website
+- `3250591` docs: add deploy report + ignore .claude session dir
+- (tento update přibyde po tom, co ho commitnu)
 
 ---
 
-## 🌐 Krok 4 — Deploy na Vercel (ručně, ~2 min)
+## 🌐 Krok 4 — Vercel deploy (30 sekund, 3 kliky)
 
-### Cesta A) Přes vercel.com (doporučené)
+Projekt `tbrska` na Vercelu už existuje — jen není napojený na git. Stačí propojit:
 
-1. Přihlas se na https://vercel.com (Sign in with GitHub)
-2. Dashboard → **Add New… → Project**
-3. **Import Git Repository** → najdi `JiriSimana/Tbrska`
-   - Pokud nevidíš, klikni **Adjust GitHub App Permissions** a povol přístup k repu
-4. **Configure Project:**
-   - Framework Preset: **Other**
-   - Root Directory: `./` (default)
-   - Build Command: _(nech prázdné)_
-   - Output Directory: _(nech prázdné — root)_
-   - Install Command: _(nech prázdné)_
-5. Klikni **Deploy**
-6. Po ~20 s dostaneš URL: `https://tbrska-<random>.vercel.app` → doplň nahoru do této tabulky
+### 4.1 Otevři přímo nastavení projektu
 
-### Cesta B) Přes Vercel CLI (pokud si ho chceš nainstalovat)
+**Klikni:** https://vercel.com/jirisimana-smartcaseczs-projects/tbrska/settings/git
 
+### 4.2 Propoj repo
+
+1. V sekci **Connected Git Repository** klikni **Connect Git Repository**
+2. Pokud seznam je prázdný → klikni **Install GitHub App** → povol přístup k `JiriSimana/Tbrska`
+3. Vyber `JiriSimana/Tbrska` → **Connect**
+4. Production Branch: `main` (default) → **Save**
+
+### 4.3 Deploy se spustí sám
+
+Vercel detekuje `vercel.json`, vezme poslední commit z `main` a nasadí. Po ~20 s budeš mít URL:
+`https://tbrska.vercel.app` (nebo `https://tbrska-<randomhash>.vercel.app`)
+
+Pošli mi URL, zkontroluju HTTP stav + Lighthouse.
+
+### Continuous deployment
+
+Od teď každý `git push origin main` automaticky spustí nový production deploy. Feature branche dostanou preview deploymenty.
+
+### Alternativně: přes Vercel CLI
+
+Pokud bys chtěl CLI:
 ```bash
 npm i -g vercel
 cd "/Users/jirisimana/Desktop/Webové stránky - kodování/Web_dominika"
 vercel login           # jednorázově, otevře prohlížeč
-vercel --prod          # deploy
+vercel link --project tbrska --scope jirisimana-smartcaseczs-projects --yes
+vercel --prod --yes
 ```
 
 ### Co udělá [vercel.json](vercel.json)
