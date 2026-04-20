@@ -212,7 +212,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 2rem 5rem;
+  padding: 8rem 2rem 9rem;
   overflow: hidden;
 }
 .hero-bg {
@@ -370,7 +370,7 @@ body {
 }
 .scroll-line {
   width: 1px;
-  height: 44px;
+  height: 32px;
   background: var(--wine);
   position: relative;
   overflow: hidden;
@@ -390,7 +390,7 @@ body {
 }
 
 @media (max-width: 680px) {
-  .hero { padding: 7rem 1.25rem 4rem; }
+  .hero { padding: 7rem 1.25rem 6.5rem; }
   .hero-portrait { width: 92%; right: -6%; opacity: 0.42; aspect-ratio: 4 / 3; }
   .hero-sub { font-size: 1rem; }
   .hero-scroll { bottom: 1.5rem; }
