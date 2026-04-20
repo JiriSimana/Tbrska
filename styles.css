@@ -1149,6 +1149,8 @@ body {
   font-size: 1.05rem;
   color: var(--wine);
   font-style: italic;
+  text-align: center;
+  margin-top: 0.75rem;
 }
 
 .reactions {
