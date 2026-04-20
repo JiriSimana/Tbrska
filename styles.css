@@ -445,6 +445,11 @@ body {
   margin-right: auto;
   text-align: center;
 }
+.section-header--centered .section-title,
+.section-header--centered .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
 .section-label {
   display: inline-flex;
   align-items: center;
