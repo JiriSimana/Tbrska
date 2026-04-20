@@ -19,6 +19,7 @@
 <meta property="og:description" content="Malby na zakázku — portréty i abstraktní kompozice. Objednávky přes Instagram @taborskaarts nebo web.">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:locale:alternate" content="hu_HU">
 <meta property="og:url" content="https://tbrska.vercel.app/">
 <meta property="og:image" content="https://tbrska.vercel.app/og-image.svg">
 <meta property="og:image:width" content="1200">
@@ -36,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -44,17 +45,17 @@
 <div class="grain" aria-hidden="true"></div>
 
 <!-- FLOATING NAV PILL -->
-<nav class="nav" aria-label="Hlavní navigace">
+<nav class="nav" data-i18n-aria-label="aria.nav" aria-label="Hlavní navigace">
   <a href="#home" class="nav-brand">tbrska</a>
   <ul class="nav-links">
-    <li><a href="#work" data-cs="Portfolio" data-sk="Portfólio">Portfolio</a></li>
-    <li><a href="#studio" data-cs="Studio" data-sk="Ateliér">Studio</a></li>
-    <li><a href="#contact" data-cs="Kontakt" data-sk="Kontakt">Kontakt</a></li>
+    <li><a href="#work" data-i18n="nav.portfolio">Portfolio</a></li>
+    <li><a href="#studio" data-i18n="nav.studio">Studio</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
   </ul>
   <div class="nav-lang">
-    <button class="lang-btn active" data-lang="cs" aria-label="Čeština">CZ</button>
-    <button class="lang-btn" data-lang="sk" aria-label="Slovenčina">SK</button>
-    <button class="lang-btn" data-lang="hu" aria-label="Magyarul" disabled title="Coming soon">HU</button>
+    <button class="lang-btn active" data-lang="cs" data-i18n-aria-label="nav.lang_cs" aria-label="Čeština">CZ</button>
+    <button class="lang-btn" data-lang="sk" data-i18n-aria-label="nav.lang_sk" aria-label="Slovenčina">SK</button>
+    <button class="lang-btn" data-lang="hu" data-i18n-aria-label="nav.lang_hu" aria-label="Magyarul">HU</button>
   </div>
 </nav>
 
@@ -68,27 +69,27 @@
 
   <div class="hero-meta">
     <span class="meta-line"></span>
-    <span class="meta-text">Studio · CZ / SK / HU · 2026</span>
+    <span class="meta-text" data-i18n="hero.meta">Studio · CZ / SK / HU · 2026</span>
   </div>
 
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="hero-word" style="--d:0">Plátno,</span>
-      <span class="hero-word" style="--d:1">štětec,</span>
-      <span class="hero-word hero-word--accent" style="--d:2">ty.</span>
+      <span class="hero-word" style="--d:0" data-i18n="hero.word1">Plátno,</span>
+      <span class="hero-word" style="--d:1" data-i18n="hero.word2">štětec,</span>
+      <span class="hero-word hero-word--accent" style="--d:2" data-i18n="hero.word3">ty.</span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n-html="hero.sub.html">
       Originální malby na zakázku.<br>
       Portréty, abstraktní kompozice, dárky se smyslem.
     </p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Chci svůj obraz <span class="btn-arrow">→</span></a>
-      <a href="#work" class="btn btn-ghost">Prohlédnout portfolio</a>
+      <a href="#contact" class="btn btn-primary" data-i18n-html="hero.cta1.html">Chci svůj obraz <span class="btn-arrow">→</span></a>
+      <a href="#work" class="btn btn-ghost" data-i18n="hero.cta2">Prohlédnout portfolio</a>
     </div>
   </div>
 
-  <a href="#work" class="hero-scroll" aria-label="Posunout dolů">
-    <span class="scroll-label">Scroll</span>
+  <a href="#work" class="hero-scroll" data-i18n-aria-label="hero.scroll_aria" aria-label="Posunout dolů">
+    <span class="scroll-label" data-i18n="hero.scroll">Scroll</span>
     <span class="scroll-line"></span>
   </a>
 </header>
@@ -96,7 +97,7 @@
 <!-- ============ INTRO STRIP ============ -->
 <section class="strip" aria-label="O tvorbě">
   <div class="strip-inner">
-    <p class="strip-text">
+    <p class="strip-text" data-i18n-html="strip.text.html">
       <em>tbrska</em> — Domenique Táborská. Malba za hranicí fotografie.
       Akryl, grafit. Díla v interiérech po celé Evropě.
     </p>
@@ -108,12 +109,12 @@
   <div class="section-header">
     <div class="section-label">
       <span class="label-num">01</span>
-      <span class="label-text">Portfolio</span>
+      <span class="label-text" data-i18n="work.label">Portfolio</span>
     </div>
-    <h2 class="section-title">
+    <h2 class="section-title" data-i18n-html="work.title.html">
       Pár věcí, <em>co už někde visí</em>
     </h2>
-    <p class="section-lead">
+    <p class="section-lead" data-i18n="work.lead">
       Malý výběr z realizovaných zakázek za poslední roky. Některé obrazy si majitelé nechávají pro sebe — ale tohle prošlo.
     </p>
   </div>
@@ -124,9 +125,9 @@
         <img src="images/portret Gyuris.JPG" alt="Ukázka z galerie Portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
-        <span class="cat-card-label">Portréty</span>
+        <span class="cat-card-label" data-i18n="work.cat_portraits">Portréty</span>
         <span class="cat-card-count" id="count-portraits">—</span>
-        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+        <span class="cat-card-cta" data-i18n-html="work.cat_cta.html">Otevřít galerii <span class="btn-arrow">→</span></span>
       </div>
     </button>
     <button class="cat-card" data-cat="abstract" type="button" aria-label="Otevřít galerii Abstraktní portréty">
@@ -134,9 +135,9 @@
         <img src="images/abstraktní portréty - Stromae.JPG" alt="Ukázka z galerie Abstraktní portréty" loading="lazy">
       </div>
       <div class="cat-card-info">
-        <span class="cat-card-label">Abstraktní portréty</span>
+        <span class="cat-card-label" data-i18n="work.cat_abstract">Abstraktní portréty</span>
         <span class="cat-card-count" id="count-abstract">—</span>
-        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+        <span class="cat-card-cta" data-i18n-html="work.cat_cta.html">Otevřít galerii <span class="btn-arrow">→</span></span>
       </div>
     </button>
     <button class="cat-card" data-cat="paintings" type="button" aria-label="Otevřít galerii Malby">
@@ -144,9 +145,9 @@
         <img src="images/malba dont trust banks.JPG" alt="Ukázka z galerie Malby" loading="lazy">
       </div>
       <div class="cat-card-info">
-        <span class="cat-card-label">Malby</span>
+        <span class="cat-card-label" data-i18n="work.cat_paintings">Malby</span>
         <span class="cat-card-count" id="count-paintings">—</span>
-        <span class="cat-card-cta">Otevřít galerii <span class="btn-arrow">→</span></span>
+        <span class="cat-card-cta" data-i18n-html="work.cat_cta.html">Otevřít galerii <span class="btn-arrow">→</span></span>
       </div>
     </button>
   </div>
@@ -180,11 +181,11 @@
   </div>
 
   <div class="work-empty" hidden>
-    <p>Zatím tady nic není — ale chystá se.</p>
+    <p data-i18n="work.empty">Zatím tady nic není — ale chystá se.</p>
   </div>
 
   <div class="work-more">
-    <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener" class="btn btn-ghost">
+    <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n-html="work.more.html">
       Další práce na Instagramu <span class="btn-arrow">↗</span>
     </a>
   </div>
@@ -195,40 +196,40 @@
   <div class="studio-grid">
     <div class="studio-meta">
       <figure class="studio-photo">
-        <img src="images/032A3941.JPG" alt="Domenique v ateliéru při kresbě portrétu" loading="lazy" width="1200" height="1800">
+        <img src="images/032A3941.JPG" data-i18n-alt="studio.alt" alt="Domenique v ateliéru při kresbě portrétu" loading="lazy" width="1200" height="1800">
       </figure>
       <div class="section-label">
         <span class="label-num">02</span>
-        <span class="label-text">Studio</span>
+        <span class="label-text" data-i18n="studio.label">Studio</span>
       </div>
-      <p class="studio-location">Česko · Slovensko · Maďarsko</p>
-      <p class="studio-working">Pracuji s akrylem a grafitem.</p>
+      <p class="studio-location" data-i18n="studio.location">Česko · Slovensko · Maďarsko</p>
+      <p class="studio-working" data-i18n="studio.working">Pracuji s akrylem a grafitem.</p>
       <ul class="studio-facts">
-        <li><span>CZ · SK · HU</span><small>Dorozumím se</small></li>
-        <li><span>Akryl · Grafit</span><small>Materiály</small></li>
-        <li><span>3–6 týdnů</span><small>Obvyklá lhůta</small></li>
-        <li><span>Na zakázku</span><small>Vždy originál</small></li>
+        <li><span data-i18n="studio.fact1_title">CZ · SK · HU</span><small data-i18n="studio.fact1_sub">Dorozumím se</small></li>
+        <li><span data-i18n="studio.fact2_title">Akryl · Grafit</span><small data-i18n="studio.fact2_sub">Materiály</small></li>
+        <li><span data-i18n="studio.fact3_title">3–6 týdnů</span><small data-i18n="studio.fact3_sub">Obvyklá lhůta</small></li>
+        <li><span data-i18n="studio.fact4_title">Na zakázku</span><small data-i18n="studio.fact4_sub">Vždy originál</small></li>
       </ul>
     </div>
 
     <div class="studio-copy">
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n-html="studio.title.html">
         <em>Štětec</em><br>místo slov.
       </h2>
       <div class="studio-text">
-        <p class="studio-lead">
+        <p class="studio-lead" data-i18n="studio.lead">
           Vyrostla jsem mezi dvěma jazyky a dvěma zeměmi — a možná proto jsem nakonec našla třetí řeč: barvu.
         </p>
-        <p>
+        <p data-i18n="studio.p1">
           K malování jsem se dostala přirozeně, skoro neviditelně. Nejdřív to byly skicy do sešitů, pak portréty blízkých, pak lidé, které jsem nikdy neviděla, ale cítila. Dneska tvořím obrazy, které visí v bytech v Česku, na Slovensku i dál — a pokaždé je to trochu jako dát kus sebe někomu jinému.
         </p>
-        <p>
+        <p data-i18n="studio.p2">
           Maluji portréty, které se dívají zpátky. Abstrakce, které nevysvětlují, ale cítí. A obrazy na míru — pro dárek, pro vzpomínku, pro zeď, která volá.
         </p>
-        <p class="studio-closer">
+        <p class="studio-closer" data-i18n="studio.closer">
           Klid. Soustředění. Sebe.
         </p>
-        <p class="studio-signature">— Domenique</p>
+        <p class="studio-signature" data-i18n="studio.signature">— Domenique</p>
       </div>
     </div>
   </div>
@@ -237,29 +238,29 @@
 <!-- ============ PROCESS STRIP ============ -->
 <section class="process" aria-label="Jak to u mě funguje">
   <div class="process-header">
-    <span class="process-label">Proces</span>
-    <h3 class="process-title">Každá zakázka je <em>malý rozhovor.</em></h3>
+    <span class="process-label" data-i18n="process.label">Proces</span>
+    <h3 class="process-title" data-i18n-html="process.title.html">Každá zakázka je <em>malý rozhovor.</em></h3>
   </div>
   <ol class="process-steps">
     <li class="process-step">
       <span class="step-num">01</span>
-      <span class="step-title">Napsání</span>
-      <span class="step-text">Piš mi klidně i když ještě nevíš, co přesně chceš — od toho jsem tady.</span>
+      <span class="step-title" data-i18n="process.s1_title">Napsání</span>
+      <span class="step-text" data-i18n="process.s1_text">Piš mi klidně i když ještě nevíš, co přesně chceš — od toho jsem tady.</span>
     </li>
     <li class="process-step">
       <span class="step-num">02</span>
-      <span class="step-title">Návrh</span>
-      <span class="step-text">Probereme náladu, velikost, techniku. Řeknu cenu a termín.</span>
+      <span class="step-title" data-i18n="process.s2_title">Návrh</span>
+      <span class="step-text" data-i18n="process.s2_text">Probereme náladu, velikost, techniku. Řeknu cenu a termín.</span>
     </li>
     <li class="process-step">
       <span class="step-num">03</span>
-      <span class="step-title">Malba</span>
-      <span class="step-text">Po záloze začínám. Posílám průběžné fotky ze studia.</span>
+      <span class="step-title" data-i18n="process.s3_title">Malba</span>
+      <span class="step-text" data-i18n="process.s3_text">Po záloze začínám. Posílám průběžné fotky ze studia.</span>
     </li>
     <li class="process-step">
       <span class="step-num">04</span>
-      <span class="step-title">Předání</span>
-      <span class="step-text">Doručení osobně nebo poštou. Klidně i zabalené jako překvapení.</span>
+      <span class="step-title" data-i18n="process.s4_title">Předání</span>
+      <span class="step-text" data-i18n="process.s4_text">Doručení osobně nebo poštou. Klidně i zabalené jako překvapení.</span>
     </li>
   </ol>
 </section>
@@ -269,12 +270,12 @@
   <div class="section-header section-header--centered">
     <div class="section-label section-label--centered">
       <span class="label-num">03</span>
-      <span class="label-text">Reference &amp; reakce</span>
+      <span class="label-text" data-i18n="test.label">Reference &amp; reakce</span>
     </div>
-    <h2 class="section-title">
+    <h2 class="section-title" data-i18n-html="test.title.html">
       Co říkají ti, <em>pro které maluji</em>
     </h2>
-    <p class="section-lead">
+    <p class="section-lead" data-i18n="test.lead">
       Dlouhé reference i krátké reakce na konkrétní obrazy — některé v maďarštině, tak jak přišly.
     </p>
   </div>
@@ -297,7 +298,7 @@
   </div>
 
   <div class="reactions">
-    <span class="reactions-label">Reakce od autorů, které namalovala</span>
+    <span class="reactions-label" data-i18n="test.reactions_label">Reakce od autorů, které namalovala</span>
     <ul class="reactions-list">
 
       <li class="reaction">
@@ -316,7 +317,7 @@
           <p class="reaction-bubble" lang="hu">szia, wowwww ez nagyon durva</p>
           <p class="reaction-bubble" lang="hu">gyönyörű lett</p>
         </div>
-        <p class="reaction-ref">reakce na obraz <strong>Gyuris</strong></p>
+        <p class="reaction-ref"><span data-i18n="test.reaction_prefix">reakce na obraz</span> <strong>Gyuris</strong></p>
       </li>
 
       <li class="reaction">
@@ -334,7 +335,7 @@
         <div class="reaction-bubbles">
           <p class="reaction-bubble" lang="hu">nagyon extra</p>
         </div>
-        <p class="reaction-ref">reakce na obraz <strong>Gyuris, Susa, Szalai</strong></p>
+        <p class="reaction-ref"><span data-i18n="test.reaction_prefix">reakce na obraz</span> <strong>Gyuris, Susa, Szalai</strong></p>
       </li>
 
       <li class="reaction">
@@ -352,7 +353,7 @@
         <div class="reaction-bubbles">
           <p class="reaction-bubble">Woooooo</p>
         </div>
-        <p class="reaction-ref">reakce na obraz <strong>Yzomandias</strong></p>
+        <p class="reaction-ref"><span data-i18n="test.reaction_prefix">reakce na obraz</span> <strong>Yzomandias</strong></p>
       </li>
 
     </ul>
@@ -365,50 +366,50 @@
     <div class="contact-copy">
       <div class="section-label">
         <span class="label-num">04</span>
-        <span class="label-text">Kontakt</span>
+        <span class="label-text" data-i18n="contact.label">Kontakt</span>
       </div>
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n-html="contact.title.html">
         Napiš mi.<br><em>Jedna zpráva</em> a máme to.
       </h2>
-      <p class="contact-lead">
+      <p class="contact-lead" data-i18n="contact.lead">
         Formulář slouží pro nezávaznou poptávku na zakázkový obraz. Odpovídám obvykle do 2 pracovních dnů.
       </p>
       <ul class="contact-direct">
         <li>
-          <span class="contact-meta">E-mail</span>
+          <span class="contact-meta" data-i18n="contact.meta_email">E-mail</span>
           <a href="mailto:domi.taborska@icloud.com">domi.taborska@icloud.com</a>
         </li>
         <li>
-          <span class="contact-meta">Instagram</span>
+          <span class="contact-meta" data-i18n="contact.meta_instagram">Instagram</span>
           <a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener">@taborskaarts ↗</a>
         </li>
         <li>
-          <span class="contact-meta">Lokace</span>
-          <span>Česko · Slovensko · Maďarsko</span>
+          <span class="contact-meta" data-i18n="contact.meta_location">Lokace</span>
+          <span data-i18n="contact.location_value">Česko · Slovensko · Maďarsko</span>
         </li>
       </ul>
     </div>
 
     <form class="contact-form" id="contactForm" novalidate>
       <div class="form-field">
-        <label for="f-name">Jméno</label>
-        <input type="text" id="f-name" name="name" placeholder="Jméno" required autocomplete="name">
+        <label for="f-name" data-i18n="form.name">Jméno</label>
+        <input type="text" id="f-name" name="name" data-i18n-placeholder="form.name" placeholder="Jméno" required autocomplete="name">
       </div>
       <div class="form-field">
-        <label for="f-email">E-mail</label>
-        <input type="email" id="f-email" name="email" placeholder="E-mail" required autocomplete="email">
+        <label for="f-email" data-i18n="form.email">E-mail</label>
+        <input type="email" id="f-email" name="email" data-i18n-placeholder="form.email" placeholder="E-mail" required autocomplete="email">
       </div>
       <div class="form-field">
-        <label for="f-message">Zpráva</label>
-        <textarea id="f-message" name="message" placeholder="Popiš, co máš na mysli — námět, velikost, termín." required rows="6"></textarea>
+        <label for="f-message" data-i18n="form.message">Zpráva</label>
+        <textarea id="f-message" name="message" data-i18n-placeholder="form.message_placeholder" placeholder="Popiš, co máš na mysli — námět, velikost, termín." required rows="6"></textarea>
       </div>
       <div class="form-field form-gdpr">
         <label class="gdpr-label">
           <input type="checkbox" id="f-gdpr" name="gdpr" required>
-          <span>Souhlasím se zpracováním osobních údajů pro účely odpovědi na poptávku.</span>
+          <span data-i18n="form.gdpr">Souhlasím se zpracováním osobních údajů pro účely odpovědi na poptávku.</span>
         </label>
       </div>
-      <button type="submit" class="btn btn-primary btn-full">
+      <button type="submit" class="btn btn-primary btn-full" data-i18n-html="form.submit.html">
         Odeslat <span class="btn-arrow">→</span>
       </button>
       <div class="form-feedback" id="formFeedback" hidden></div>
@@ -421,12 +422,12 @@
   <div class="footer-top">
     <div class="footer-brand">
       <span class="footer-name">tbrska</span>
-      <span class="footer-slogan">art · CZ / SK / HU</span>
+      <span class="footer-slogan" data-i18n="footer.slogan">art · CZ / SK / HU</span>
     </div>
     <ul class="footer-links">
-      <li><a href="#work">Portfolio</a></li>
-      <li><a href="#studio">Studio</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="#work" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#studio" data-i18n="nav.studio">Studio</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
     </ul>
     <ul class="footer-social">
       <li><a href="https://www.instagram.com/taborskaarts" target="_blank" rel="noopener">Instagram ↗</a></li>
@@ -434,9 +435,9 @@
     </ul>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© tbrska 2026 — bez kopií, bez printů, bez výmluv</p>
-    <button class="footer-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Zpět nahoru">
-      ↑ Nahoru
+    <p class="footer-copy" data-i18n="footer.copy">© tbrska 2026 — bez kopií, bez printů, bez výmluv</p>
+    <button class="footer-top-btn" data-i18n-aria-label="footer.top_aria" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Zpět nahoru">
+      <span data-i18n="footer.top">↑ Nahoru</span>
     </button>
   </div>
 </footer>
@@ -445,32 +446,32 @@
 <div class="gallery-modal" id="galleryModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="galleryLabel">
   <header class="gallery-header">
     <div class="gallery-header-meta">
-      <span class="gallery-header-eyebrow">Galerie</span>
+      <span class="gallery-header-eyebrow" data-i18n="work.gallery_eyebrow">Galerie</span>
       <span class="gallery-header-label" id="galleryLabel">—</span>
     </div>
-    <button class="gallery-close" id="galleryClose" type="button" aria-label="Zavřít galerii">✕</button>
+    <button class="gallery-close" id="galleryClose" type="button" data-i18n-aria-label="aria.gallery_close" aria-label="Zavřít galerii">✕</button>
   </header>
   <div class="gallery-grid" id="galleryGrid"></div>
 </div>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detail obrazu">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Zavřít náhled" type="button">✕</button>
+<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" data-i18n-aria-label="aria.lightbox_dialog" aria-label="Detail obrazu">
+  <button class="lightbox-close" id="lightboxClose" data-i18n-aria-label="aria.lightbox_close" aria-label="Zavřít náhled" type="button">✕</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
   <p class="lightbox-caption" id="lightboxCap"></p>
 </div>
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner" hidden>
-  <p class="cookie-text">
+  <p class="cookie-text" data-i18n="cookie.text">
     Používáme cookies pro analýzu návštěvnosti. Podrobnosti v Zásadách ochrany.
   </p>
   <div class="cookie-actions">
-    <button class="btn btn-ghost btn-small" data-cookie="decline" type="button">Odmítnout</button>
-    <button class="btn btn-primary btn-small" data-cookie="accept" type="button">Přijmout</button>
+    <button class="btn btn-ghost btn-small" data-cookie="decline" type="button" data-i18n="cookie.decline">Odmítnout</button>
+    <button class="btn btn-primary btn-small" data-cookie="accept" type="button" data-i18n="cookie.accept">Přijmout</button>
   </div>
 </div>
 
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
