@@ -1143,6 +1143,7 @@ body {
   font-weight: 300;
 }
 .review-quote p { margin: 0; }
+.review-quote p + p { margin-top: 0.9rem; }
 .review-attr {
   font-family: var(--f-display);
   font-size: 1.05rem;
@@ -1301,8 +1302,8 @@ body {
 }
 .contact-direct li {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 1rem;
+  grid-template-columns: 130px 1fr;
+  gap: 1.25rem;
   align-items: baseline;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--line-soft);
