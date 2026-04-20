@@ -8,8 +8,8 @@
   /* ======== I18N DICTIONARY ======== */
   const I18N = {
     cs: {
-      'meta.title': 'tbrska — portréty a abstrakce malované ručně',
-      'meta.description': 'Umělecké portréty a abstraktní malby ze Slovenska a Česka. Originály na zakázku — pro sebe, pro lásku, pro vzpomínku.',
+      'meta.title': 'tbrska',
+      'meta.description': 'tbrska',
       'aria.nav': 'Hlavní navigace',
       'nav.portfolio': 'Portfolio',
       'nav.studio': 'Studio',
@@ -91,7 +91,8 @@
       'form.gdpr': 'Souhlasím se zpracováním osobních údajů pro účely odpovědi na poptávku.',
       'form.submit.html': 'Odeslat <span class="btn-arrow">→</span>',
       'form.error': 'Zkontroluj prosím vyplněná pole a souhlas s GDPR.',
-      'form.success': 'Má to. Držím u štětce, píšu zpátky. (Otevřel se ti e-mailový klient — pokud ne, pošli zprávu přímo na domi.taborska@icloud.com.)',
+      'form.success': 'Má to. Zpráva je u mě — ozvu se zpátky během pár dní.',
+      'form.network_error': 'Odeslání se nepovedlo. Zkus to prosím znova nebo napiš přímo na domi.taborska@icloud.com.',
       'form.subject_prefix': 'Poptávka od',
       'form.mail_name': 'Jméno',
       'form.mail_email': 'E-mail',
@@ -110,8 +111,8 @@
       'aria.gallery_item_prefix': 'Otevřít detail'
     },
     sk: {
-      'meta.title': 'tbrska — portréty a abstrakcie maľované ručne',
-      'meta.description': 'Umelecké portréty a abstraktné maľby zo Slovenska a Česka. Originály na zákazku — pre seba, pre lásku, pre spomienku.',
+      'meta.title': 'tbrska',
+      'meta.description': 'tbrska',
       'aria.nav': 'Hlavná navigácia',
       'nav.portfolio': 'Portfólio',
       'nav.studio': 'Ateliér',
@@ -193,7 +194,8 @@
       'form.gdpr': 'Súhlasím so spracovaním osobných údajov na účely odpovede na dopyt.',
       'form.submit.html': 'Odoslať <span class="btn-arrow">→</span>',
       'form.error': 'Skontroluj prosím vyplnené polia a súhlas s GDPR.',
-      'form.success': 'Mám to. Držím pri štetci, píšem späť. (Otvoril sa ti e-mailový klient — ak nie, pošli správu priamo na domi.taborska@icloud.com.)',
+      'form.success': 'Mám to. Správa dorazila — ozvem sa ti späť počas pár dní.',
+      'form.network_error': 'Odoslanie sa nepodarilo. Skús to prosím znova alebo napíš priamo na domi.taborska@icloud.com.',
       'form.subject_prefix': 'Dopyt od',
       'form.mail_name': 'Meno',
       'form.mail_email': 'E-mail',
@@ -212,8 +214,8 @@
       'aria.gallery_item_prefix': 'Otvoriť detail'
     },
     hu: {
-      'meta.title': 'tbrska — kézzel festett portrék és absztrakciók',
-      'meta.description': 'Művészi portrék és absztrakt festmények Szlovákiából és Csehországból. Egyedi rendelésre — magadnak, a szerelemnek, az emlékeknek.',
+      'meta.title': 'tbrska',
+      'meta.description': 'tbrska',
       'aria.nav': 'Fő navigáció',
       'nav.portfolio': 'Portfólió',
       'nav.studio': 'Stúdió',
@@ -295,7 +297,8 @@
       'form.gdpr': 'Hozzájárulok személyes adataim kezeléséhez a megkeresésre adott válasz céljából.',
       'form.submit.html': 'Küldés <span class="btn-arrow">→</span>',
       'form.error': 'Kérlek, ellenőrizd a kitöltött mezőket és a GDPR hozzájárulást.',
-      'form.success': 'Megkaptam. Festek, írok vissza. (Megnyílt az e-mail kliensed — ha nem, küldj üzenetet közvetlenül a domi.taborska@icloud.com címre.)',
+      'form.success': 'Megkaptam. Az üzenet megérkezett — pár napon belül válaszolok.',
+      'form.network_error': 'A küldés nem sikerült. Kérlek, próbáld újra, vagy írj közvetlenül a domi.taborska@icloud.com címre.',
       'form.subject_prefix': 'Megkeresés tőle:',
       'form.mail_name': 'Név',
       'form.mail_email': 'E-mail',
@@ -520,7 +523,10 @@
     feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
-  form.addEventListener('submit', (e) => {
+  const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/domi.taborska@icloud.com';
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const dict = getDict(currentLang);
 
@@ -547,18 +553,30 @@
       return;
     }
 
-    // For static host — mailto fallback
-    const subject = encodeURIComponent(`${dict['form.subject_prefix']} ${name}`);
-    const body = encodeURIComponent(
-      `${dict['form.mail_name']}: ${name}\n${dict['form.mail_email']}: ${email}\n\n${dict['form.mail_message']}:\n${message}\n\n—\n${dict['form.mail_footer']}`
-    );
+    if (submitBtn) submitBtn.disabled = true;
 
-    window.location.href = `mailto:domi.taborska@icloud.com?subject=${subject}&body=${body}`;
-
-    setTimeout(() => {
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `${dict['form.subject_prefix']} ${name}`,
+          _captcha: 'false',
+          _template: 'table',
+          _language: currentLang
+        })
+      });
+      if (!res.ok) throw new Error('submit failed');
       showFeedback(dict['form.success'], 'success');
       form.reset();
-    }, 500);
+    } catch (err) {
+      showFeedback(dict['form.network_error'], 'error');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   /* ======== COOKIE BANNER ======== */
