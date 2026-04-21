@@ -1143,6 +1143,31 @@ body {
   font-weight: 300;
 }
 
+/* ============ IN-SITU VIDEO ============ */
+.insitu .section-header { margin-bottom: 3rem; }
+.insitu-video {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  background: #1E0E18;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -20px rgba(48, 23, 40, 0.45);
+  position: relative;
+}
+.insitu-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+@media (max-width: 680px) {
+  .insitu-video { max-width: 300px; border-radius: 12px; }
+}
+
 /* ============ TESTIMONIALS ============ */
 .reviews {
   display: flex;
