@@ -1144,6 +1144,13 @@ body {
 }
 
 /* ============ IN-SITU VIDEO ============ */
+.section.insitu {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-md);
+}
+.insitu + .testimonials {
+  padding-top: var(--space-xl);
+}
 .insitu .section-header { margin-bottom: 3rem; }
 .insitu-video {
   width: 100%;
