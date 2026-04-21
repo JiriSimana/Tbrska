@@ -475,41 +475,42 @@
   });
 
   /* ======== APPLY LANGUAGE ======== */
+  // Cache i18n node lists once — they don't change after initial render.
+  const metaDescEl = document.querySelector('meta[name="description"]');
+  const i18nText = document.querySelectorAll('[data-i18n]');
+  const i18nHtml = document.querySelectorAll('[data-i18n-html]');
+  const i18nAttrs = ['placeholder', 'aria-label', 'alt', 'title'].map(attr => ({
+    attr,
+    nodes: document.querySelectorAll(`[data-i18n-${attr}]`)
+  }));
+
   const applyLanguage = (lang) => {
     const dict = getDict(lang);
     currentLang = lang;
     document.documentElement.lang = lang;
 
-    // <title> + meta description
     if (dict['meta.title']) document.title = dict['meta.title'];
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && dict['meta.description']) metaDesc.setAttribute('content', dict['meta.description']);
+    if (metaDescEl && dict['meta.description']) metaDescEl.setAttribute('content', dict['meta.description']);
 
-    // textContent
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.textContent = dict[key];
+    i18nText.forEach(el => {
+      const v = dict[el.getAttribute('data-i18n')];
+      if (v !== undefined) el.textContent = v;
     });
-    // innerHTML
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-      const key = el.getAttribute('data-i18n-html');
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    i18nHtml.forEach(el => {
+      const v = dict[el.getAttribute('data-i18n-html')];
+      if (v !== undefined) el.innerHTML = v;
     });
-    // Attribute helpers
-    const attrs = ['placeholder', 'aria-label', 'alt', 'title'];
-    attrs.forEach(attr => {
-      document.querySelectorAll(`[data-i18n-${attr}]`).forEach(el => {
-        const key = el.getAttribute(`data-i18n-${attr}`);
-        if (dict[key] !== undefined) el.setAttribute(attr, dict[key]);
+    i18nAttrs.forEach(({ attr, nodes }) => {
+      nodes.forEach(el => {
+        const v = dict[el.getAttribute(`data-i18n-${attr}`)];
+        if (v !== undefined) el.setAttribute(attr, v);
       });
     });
 
-    // Dynamic: counts
     setCount('count-portraits', categoryCounts.portraits, lang);
     setCount('count-abstract', categoryCounts.abstract, lang);
     setCount('count-paintings', categoryCounts.paintings, lang);
 
-    // Dynamic: cat-card aria-label + inner img alt
     catCards.forEach(card => {
       const cat = card.dataset.cat;
       const label = dict[`work.cat_${cat}`] || cat;
@@ -518,7 +519,6 @@
       if (inner) inner.alt = `${dict['work.cat_alt_prefix']} ${label}`;
     });
 
-    // Dynamic: gallery label if open
     if (!galleryModal.hidden && galleryModal.dataset.currentCat) {
       galleryLabel.textContent = getCatLabel(galleryModal.dataset.currentCat);
     }
@@ -628,8 +628,9 @@
       const lang = btn.dataset.lang;
       if (!I18N[lang]) return;
       setActiveLangBtn(lang);
-      applyLanguage(lang);
       localStorage.setItem('tbrska_lang', lang);
+      // Defer heavy DOM rewrite to next frame so the click responds instantly (INP).
+      requestAnimationFrame(() => applyLanguage(lang));
     });
   });
 
@@ -657,17 +658,6 @@
 
   revealTargets.forEach(el => revealObs.observe(el));
 
-  /* ======== SMOOTH INTERNAL ANCHOR ======== */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+  /* Smooth anchor scrolling handled by CSS (html { scroll-behavior: smooth }). */
 
 })();
