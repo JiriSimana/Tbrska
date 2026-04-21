@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tbrska.vercel.app/sitemap.xml
+Sitemap: https://tbrska.com/sitemap.xml
